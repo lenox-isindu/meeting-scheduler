@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <nav>
+    <div class="logo">Meeting Scheduler</div>
+    <div class="signup-button">
+      <a href="login.html">Login</a>
+    </div>
+  </nav>
+
+  <!-- Sign Up Form Section -->
+  <section id="sign-up-section">
+    <div class="form-container">
+      <h2>Create an Account</h2>
+      <form id="sign-up-form">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Log in here</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Meeting Scheduler. All rights reserved.</p>
+  </footer>
+
+  <script src="register.js" type="module"></script>
+</body>
+</html>
