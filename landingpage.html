@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
+  <title>ScheduleWise - Modern Scheduler</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="landingpage.css">
 </head>
 <body>
-  <!-- Header & Navigation -->
+  <!-- Navigation Bar -->
   <nav>
     <div class="logo">ScheduleWise</div>
     <div class="signup-button">
@@ -15,55 +17,111 @@
     </div>
   </nav>
 
-  <!-- Welcome Section -->
-  <section id="welcome-section">
-    <h2>Welcome to ScheduleWise</h2>
-    <p>Schedule and manage your meetings efficiently with our easy-to-use platform.</p>
-  </section>
- <!-- Video Background Section with Overlay -->
-<section id="video-background">
-    <video id="bg-video" autoplay muted playsinline>
-      <!-- Optionally add a source tag if needed -->
-      <!-- <source src="assets/videos/video1.mp4" type="video/mp4"> -->
-    </video>
+  <!-- Hero Section with Video Background -->
+  <section id="hero">
     <div class="video-overlay">
-      <h2>ScheduleWise</h2>
-      <p id="welcome-message">Schedule and manage your meetings efficiently with our easy-to-use platform.</p>
+      <h1>Effortless Meeting Scheduling</h1>
+      <p id="typing-landingpage"></p>
+      <a href="signup.html" class="cta-button">Get Started</a>
     </div>
+    <!-- Updated video element: added id and removed loop attribute -->
+    <video id="bg-video" autoplay muted playsinline>
+      <source src="assets/videos/video1.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="feature-card">
+      <img src="assets/images/calender.jpeg" alt="Calendar">
+      <h3>Smart Calendar</h3>
+      <p>Sync with Google & Outlook for seamless scheduling.</p>
+    </div>
+    <div class="feature-card">
+      <img src="assets/images/notifications.jpeg" alt="Notifications">
+      <h3>Instant Notifications</h3>
+      <p>Stay updated with timely meeting alerts.</p>
+    </div>
+    <div class="feature-card">
+      <img src="assets/images/tools.jpeg" alt="Integration">
+      <h3>Tool Integration</h3>
+      <p>Connect with Zoom, Teams, and Slack effortlessly.</p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    
+    <details>
+      <summary>How do I schedule a meeting?</summary>
+      <p>Use our intuitive calendar tool to select a time, send invites, and manage your schedule with ease.</p>
+    </details>
+    
+    <details>
+      <summary>Can I sync with Google Calendar?</summary>
+      <p>Yes! We support integration with Google Calendar, Outlook, and other popular calendar apps for seamless scheduling.</p>
+    </details>
+    
+    <details>
+      <summary>How secure is my data?</summary>
+      <p>Your privacy is our top priority. We use industry-standard encryption and security protocols to protect your information.</p>
+    </details>
+    
+    <details>
+      <summary>Can I set recurring meetings?</summary>
+      <p>Absolutely! You can schedule recurring meetings with customizable intervals, ensuring that your regular appointments are always up-to-date.</p>
+    </details>
+    
+    <details>
+      <summary>What integrations are available?</summary>
+      <p>ScheduleWise integrates with popular tools such as Zoom, Microsoft Teams, Slack, and more, helping you connect your workflow seamlessly.</p>
+    </details>
+    
+    <details>
+      <summary>Do you offer a mobile app?</summary>
+      <p>Yes, our mobile apps for iOS and Android let you manage your meetings on the go, so you're always in control of your schedule.</p>
+    </details>
+    
+    <details>
+      <summary>Is there a free trial available?</summary>
+      <p>Yes, we offer a 14-day free trial to explore all our features. No credit card is required to get started!</p>
+    </details>
   </section>
   
 
-  <!-- Feature Cards Section -->
-  <section id="feature-cards">
-    <div class="card">
-      <img src="assets/images/calender.jpeg" alt="Calendar" />
-      <div class="card-content">
-        <h3>Manage Your Calendar</h3>
-        <p>Easily manage your meetings and events in one place.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="assets/images/notifications.jpeg" alt="Notifications" />
-      <div class="card-content">
-        <h3>Set Notifications</h3>
-        <p>Get notified on important meetings and events.</p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="assets/images/tools.jpeg" alt="Integration" />
-      <div class="card-content">
-        <h3>Integration with Tools</h3>
-        <p>Integrate with your favorite tools to sync your schedule seamlessly.</p>
+  <!-- Call To Action -->
+  <section id="cta">
+    <h2>Start Scheduling Smarter</h2>
+    <p>Join thousands of professionals simplifying their meetings.</p>
+    <a href="signup.html" class="cta-button">Sign Up Free</a>
+  </section>
+  
+  <section id="icon-carousel-section">
+    <div class="icon-carousel-wrapper">
+      <div class="icon-carousel">
+        <!-- Choose icons relevant to your app -->
+        <i class="fa-solid fa-calendar-days"></i>
+        <i class="fa-solid fa-clock"></i>
+        <i class="fa-solid fa-bell"></i>
+        <i class="fa-solid fa-users"></i>
+        <i class="fa-solid fa-plug"></i>
+        <i class="fa-solid fa-check"></i>
+        <!-- Repeat the icons for a smooth continuous scroll -->
+        <i class="fa-solid fa-calendar-days"></i>
+        <i class="fa-solid fa-clock"></i>
+        <i class="fa-solid fa-bell"></i>
+        <i class="fa-solid fa-users"></i>
+        <i class="fa-solid fa-plug"></i>
+        <i class="fa-solid fa-check"></i>
       </div>
     </div>
   </section>
-
+  
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Meeting Scheduler. All rights reserved.</p>
+    <p>&copy; 2025 ScheduleWise. All rights reserved.</p>
   </footer>
-
-  <!-- Include our script -->
   <script src="script.js"></script>
 </body>
 </html>

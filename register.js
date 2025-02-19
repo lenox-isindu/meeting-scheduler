@@ -70,3 +70,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+import { signOut } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Handle Logout if the logout button exists
+  const logoutButton = document.getElementById("logout-btn");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      signOut(auth)
+        .then(() => {
+          console.log("User logged out successfully");
+          alert("Logged out successfully!");
+          window.location.href = "landingpage.html"; // Redirect to landing page
+        })
+        .catch((error) => {
+          console.error("Error logging out:", error.message);
+          alert("Logout failed: " + error.message);
+        });
+    });
+  }
+});
+
+
+

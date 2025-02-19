@@ -1,38 +1,29 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background: #f4f4f4;
+    color: #333;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header & Navigation */
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007bff;
-    color: white;
+    background: #007bff;
     padding: 15px 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    color: white;
 }
 
 nav .logo {
-    margin: 0;
     font-size: 24px;
     font-weight: bold;
 }
 
 nav .signup-button a {
-    background-color: #fff;
+    background: white;
     color: #007bff;
     padding: 10px 16px;
     border-radius: 5px;
@@ -41,123 +32,154 @@ nav .signup-button a {
 }
 
 nav .signup-button a:hover {
-    background-color: #007bff;
+    background: #0056b3;
     color: white;
 }
 
-/* Welcome Section */
-#welcome-section {
-    text-align: center;
-    margin: 50px 0;
-}
-
-#welcome-section h2 {
-    font-size: 32px;
-    color: #007bff;
-}
-
-#welcome-section p {
-    font-size: 18px;
-    color: #555;
-    margin-top: 10px;
-}
-/* Welcome Section */
-#welcome-section {
-    text-align: center;
-    margin: 20px 0;
-}
-
-#typing-message {
-    font-size: 18px;
-    font-weight: bold;
-    color: #007bff;
-    min-height: 30px;
-}
-
-/* Video Background Section */
-#video-background {
-    width: 100%;
-    max-height: 400px; /* Adjust as needed */
-    overflow: hidden;
-    margin-bottom: 20px;
+/* Hero Section */
+#hero {
     position: relative;
-  }
-  
-  #video-background video {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-  }
-  
- /* Overlay for the welcome message */
-.video-overlay {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+#hero video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;           /* Ensure it sits on top of the video */
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FFD700;
+    color: black;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background: #FFA500;
+}
+
+/* Features Section */
+/* Features Section */
+#features {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;          /* White text to stand out on dark videos */
-    background: rgba(0, 0, 0, 0.3); /* Optional: a slight dark overlay for readability */
-  }
-  
-  .video-overlay h2,
-  .video-overlay p {
-    font-size: 3rem;      /* Uniform large font size for both elements */
-    margin: 0;
-  }
-  
-  
-/* Feature Cards Section */
-#feature-cards {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
     gap: 20px;
+    padding: 50px 20px;
+    background: white;
 }
 
-.card {
-    background-color: #fff;
+.feature-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    width: 300px;
     text-align: center;
+    width: 280px;
+    /* Add transition for smooth effect */
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.card img {
+.feature-card img {
     width: 100%;
-    height: 200px;
+    height: 150px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
-.card-content {
-    padding: 20px;
+/* Hover effect for feature cards */
+.feature-card:hover {
+    background: #b6b7bb;  
+    transform: scale(1.05);  
 }
 
-.card h3 {
-    font-size: 20px;
-    color: #007bff;
+
+/* FAQ Section */
+#faq {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #dfe0e2;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#faq details {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.card p {
-    font-size: 16px;
-    color: #555;
+/* Call To Action */
+#cta {
+    text-align: center;
+    padding: 50px;
+    background: #b6b7bb;
+    color: white;
 }
+/* Scrolling Icons Carousel Section */
+#icon-carousel-section {
+    overflow: hidden;
+    background: #007bff; /* Adjust background as needed */
+    padding: 20px 0;
+  }
+  
+  .icon-carousel-wrapper {
+    width: 100%;
+    height: 5%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .icon-carousel {
+    display: flex;
+    /* Adjust the animation duration to control the speed */
+    animation: scrollIcons 20s linear infinite;
+  }
+  
+  
+  .icon-carousel i {
+    font-size: 40px;
+    margin: 0 30px;
+    color: #ebf4f5; /* Adjust icon color to match your theme */
+  }
+  
+  /* Keyframes for scrolling effect */
+  @keyframes scrollIcons {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
 
 /* Footer */
 footer {
     text-align: center;
-    background-color: #007bff;
-    color: white;
     padding: 10px;
-    margin-top: 40px;
-    border-radius: 8px;
+    background: #007bff;
+    color: white;
 }
