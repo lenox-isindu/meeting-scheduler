@@ -1,74 +1,64 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Sample Data (You can replace this with API calls)
-    let meetings = [
-        { title: "Team Sync", date: "2025-02-18", time: "10:00 AM" },
-        { title: "Project Review", date: "2025-02-19", time: "02:00 PM" }
-    ];
-    let notifications = ["Meeting rescheduled", "New comment on your task"];
-    let activityLog = ["Logged in", "Updated profile", "Created a meeting"];
+// dashboard.js
+import { db } from './firebase-init.js';
+import { collection, query, where, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
-    // Populate Upcoming Meetings
-    function loadMeetings() {
-        let meetingList = document.getElementById("meeting-list");
+document.addEventListener('DOMContentLoaded', function() {
+  // Sidebar toggle functionality
+  const toggleBtn = document.getElementById('sidebar-toggle');
+  const dashboardLayout = document.querySelector('.dashboard-layout');
+  toggleBtn.addEventListener('click', function() {
+    dashboardLayout.classList.toggle('sidebar-hidden');
+  });
+
+  // Listen for auth state changes and update dashboard content accordingly
+  const auth = getAuth();
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      const meetingList = document.getElementById('meeting-list');
+      const activityList = document.getElementById('activity-list');
+      const notificationList = document.getElementById('notification-list');
+
+      // Query meetings for the current user, ordered by createdAt descending
+      const q = query(
+        collection(db, "meetings"),
+        where("userId", "==", user.uid),
+        orderBy("createdAt", "desc")
+      );
+      
+      onSnapshot(q, (snapshot) => {
+        // Clear current lists
         meetingList.innerHTML = "";
-        if (meetings.length === 0) {
-            meetingList.innerHTML = "<li>No upcoming meetings</li>";
-        } else {
-            meetings.forEach(meeting => {
-                let li = document.createElement("li");
-                li.textContent = `${meeting.title} - ${meeting.date} at ${meeting.time}`;
-                meetingList.appendChild(li);
-            });
-        }
-    }
-
-    // Populate Notifications
-    function loadNotifications() {
-        let notificationList = document.getElementById("notification-list");
-        notificationList.innerHTML = "";
-        if (notifications.length === 0) {
-            notificationList.innerHTML = "<li>No new notifications</li>";
-        } else {
-            notifications.forEach(note => {
-                let li = document.createElement("li");
-                li.textContent = note;
-                notificationList.appendChild(li);
-            });
-        }
-    }
-
-    // Populate Recent Activity
-    function loadActivity() {
-        let activityList = document.getElementById("activity-list");
         activityList.innerHTML = "";
-        if (activityLog.length === 0) {
-            activityList.innerHTML = "<li>No recent activity</li>";
+        notificationList.innerHTML = "";
+        
+        if (snapshot.empty) {
+          meetingList.innerHTML = "<li>No upcoming meetings</li>";
+          activityList.innerHTML = "<li>No recent activity</li>";
+          notificationList.innerHTML = "<li>No new notifications</li>";
         } else {
-            activityLog.forEach(act => {
-                let li = document.createElement("li");
-                li.textContent = act;
-                activityList.appendChild(li);
-            });
+          snapshot.forEach((doc) => {
+            const meeting = doc.data();
+            const meetingItemText = `${meeting.title} - ${meeting.date} at ${meeting.time}`;
+            // Upcoming Meetings
+            const meetingItem = document.createElement('li');
+            meetingItem.textContent = meetingItemText;
+            meetingList.appendChild(meetingItem);
+            // Recent Activity
+            const activityItem = document.createElement('li');
+            activityItem.textContent = `Created meeting: ${meetingItemText}`;
+            activityList.appendChild(activityItem);
+            // Notifications
+            const notificationItem = document.createElement('li');
+            notificationItem.textContent = `New meeting scheduled: ${meetingItemText}`;
+            notificationList.appendChild(notificationItem);
+          });
         }
+      });
+    } else {
+      console.log("No authenticated user detected.");
+      // Optionally, redirect to login page
     }
-
-    // Open Create Meeting Modal (Mockup)
-    document.getElementById("create-meeting").addEventListener("click", function () {
-        let meetingTitle = prompt("Enter Meeting Title:");
-        let meetingDate = prompt("Enter Meeting Date (YYYY-MM-DD):");
-        let meetingTime = prompt("Enter Meeting Time (HH:MM AM/PM):");
-
-        if (meetingTitle && meetingDate && meetingTime) {
-            meetings.push({ title: meetingTitle, date: meetingDate, time: meetingTime });
-            activityLog.push(`Created meeting: ${meetingTitle}`);
-            loadMeetings();
-            loadActivity();
-            alert("Meeting Created!");
-        }
-    });
-
-    // Initialize Dashboard
-    loadMeetings();
-    loadNotifications();
-    loadActivity();
+  });
 });
+

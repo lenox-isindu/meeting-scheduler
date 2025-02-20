@@ -5,85 +5,167 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  }
+  
+  /* Header */
+  header {
     background-color: #007bff;
     color: white;
     padding: 15px 20px;
-}
-
-header h1 {
+  }
+  
+  /* First Row: Title */
+  .header-row1 {
+    text-align: left;
+  }
+  .header-row1 h1 {
     margin: 0;
-}
-
-nav ul {
+    font-size: 28px;
+  }
+  
+  /* Second Row: Toggle Icon & Navigation */
+  .header-row2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  
+  
+  .sidebar-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px; /* Smaller icon */
+    cursor: pointer;
+    /* Optional: add some top margin if needed */
+    margin-top: 5px;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-right ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
+  }
+  
+  .header-right ul li {
+    margin-left: 15px;
+  }
+  
+  .header-right ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
-}
-
-/* Dashboard Container */
-.dashboard-container {
-    max-width: 1200px;
-    margin: 20px auto;
+  }
+  
+  /* Dashboard Layout */
+  .dashboard-layout {
+    display: flex;
+    transition: all 0.3s ease;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    min-height: calc(100vh - 70px);
+    transition: transform 0.3s ease, width 0.3s ease, padding 0.3s ease;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 20px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  /* Hidden Sidebar State */
+  .dashboard-layout.sidebar-hidden .sidebar {
+    transform: translateX(-100%);
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  /* Main Content (Dashboard Container) */
+  .dashboard-container {
+    flex: 1;
+    margin: 20px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-header {
+    transition: margin 0.3s ease, width 0.3s ease;
+  }
+  
+  /* Dashboard Header */
+  .dashboard-header {
     text-align: center;
     margin-bottom: 20px;
-}
-
-/* Grid Layout */
-.dashboard-grid {
+  }
+  
+  /* Grid Layout for Cards */
+  .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-}
-
-/* Dashboard Cards */
-.dashboard-card {
+  }
+  
+  /* Dashboard Cards */
+  .dashboard-card {
     background-color: #f8f9fa;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.dashboard-card h3 {
+  }
+  
+  .dashboard-card h3 {
     margin-top: 0;
     color: #007bff;
-}
-
-.dashboard-card ul {
+  }
+  
+  .dashboard-card ul {
     list-style: none;
     padding: 0;
-}
-
-.dashboard-card ul li {
+  }
+  
+  .dashboard-card ul li {
     padding: 8px 0;
     border-bottom: 1px solid #ddd;
-}
-
-/* Buttons */
-button {
+  }
+  .dashboard-card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .dashboard-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  
+  /* Buttons */
+  button {
     display: block;
     width: 100%;
     background-color: #007bff;
@@ -94,18 +176,19 @@ button {
     cursor: pointer;
     font-size: 16px;
     margin-top: 10px;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #0056b3;
-}
-
-/* Footer */
-footer {
+  }
+  
+  /* Footer */
+  footer {
     text-align: center;
+    padding: 10px;
     background-color: #007bff;
     color: white;
-    padding: 10px;
     margin-top: 20px;
     border-radius: 8px;
-}
+  }
+  
