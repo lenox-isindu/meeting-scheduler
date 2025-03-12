@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ScheduleWise - Modern Scheduler</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link rel="stylesheet" href="landingpage.css">
 </head>
 <body>
   <!-- Navigation Bar -->
   <nav>
     <div class="logo">ScheduleWise</div>
+    <div class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about-us">About Us</a>
+    </div>
     <div class="signup-button">
       <a href="signup.html">Sign Up</a>
     </div>
   </nav>
+  
 
   <!-- Hero Section with Video Background -->
   <section id="hero">
@@ -24,7 +29,6 @@
       <p id="typing-landingpage"></p>
       <a href="signup.html" class="cta-button">Get Started</a>
     </div>
-    <!-- Updated video element: added id and removed loop attribute -->
     <video id="bg-video" autoplay muted playsinline>
       <source src="assets/videos/video1.mp4" type="video/mp4">
     </video>
@@ -49,46 +53,85 @@
     </div>
   </section>
 
+ <!-- About Us Section -->
+<section id="about-us">
+  <div class="about-wrapper">
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p><strong>Welcome to ScheduleWise!</strong></p>
+      <p>ScheduleWise is your ultimate solution for effortless meeting scheduling. We help professionals, teams, and freelancers save time by automating and optimizing their scheduling process.</p>
+
+      <div class="about-features">
+        <div class="feature-card">
+          <i class="fa-solid fa-calendar-days"></i>
+          <h3>Seamless Scheduling</h3>
+          <p>Book and manage meetings without the back-and-forth emails.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-plug"></i>
+          <h3>Smart Integrations</h3>
+          <p>Sync with Google Calendar, Outlook, Zoom, Slack, and more.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-clock"></i>
+          <h3>Time-Saving Features</h3>
+          <p>Get smart reminders, recurring meeting setups, and auto-scheduling.</p>
+        </div>
+      </div>
+
+      <p class="about-mission"><strong>Our mission is to help you manage your time efficiently so you can focus on what truly matters.</strong></p>
+    </div>
+    <div class="about-image">
+      <img src="assets/images/about-us.jpg" alt="About Us">
+    </div>
+  </div>
+</section>
+
+
+
+
   <!-- FAQ Section -->
   <section id="faq">
     <h2>Frequently Asked Questions</h2>
-    
     <details>
       <summary>How do I schedule a meeting?</summary>
       <p>Use our intuitive calendar tool to select a time, send invites, and manage your schedule with ease.</p>
     </details>
-    
     <details>
       <summary>Can I sync with Google Calendar?</summary>
-      <p>Yes! We support integration with Google Calendar, Outlook, and other popular calendar apps for seamless scheduling.</p>
+      <p>Yes! We support integration with Google Calendar, Outlook, and other popular calendar apps.</p>
     </details>
+  </details>
     
-    <details>
-      <summary>How secure is my data?</summary>
-      <p>Your privacy is our top priority. We use industry-standard encryption and security protocols to protect your information.</p>
-    </details>
-    
-    <details>
-      <summary>Can I set recurring meetings?</summary>
-      <p>Absolutely! You can schedule recurring meetings with customizable intervals, ensuring that your regular appointments are always up-to-date.</p>
-    </details>
-    
-    <details>
-      <summary>What integrations are available?</summary>
-      <p>ScheduleWise integrates with popular tools such as Zoom, Microsoft Teams, Slack, and more, helping you connect your workflow seamlessly.</p>
-    </details>
-    
-    <details>
-      <summary>Do you offer a mobile app?</summary>
-      <p>Yes, our mobile apps for iOS and Android let you manage your meetings on the go, so you're always in control of your schedule.</p>
-    </details>
-    
-    <details>
-      <summary>Is there a free trial available?</summary>
-      <p>Yes, we offer a 14-day free trial to explore all our features. No credit card is required to get started!</p>
-    </details>
-  </section>
+  <details>
+    <summary>How secure is my data?</summary>
+    <p>Your privacy is our top priority. We use industry-standard encryption and security protocols to protect your information.</p>
+  </details>
   
+  <details>
+    <summary>Can I set recurring meetings?</summary>
+    <p>Absolutely! You can schedule recurring meetings with customizable intervals, ensuring that your regular appointments are always up-to-date.</p>
+  </details>
+  
+  <details>
+    <summary>What integrations are available?</summary>
+    <p>ScheduleWise integrates with popular tools such as Zoom, Microsoft Teams, Slack, and more, helping you connect your workflow seamlessly.</p>
+  </details>
+  
+  <details>
+    <summary>Do you offer a mobile app?</summary>
+    <p>Yes, our mobile apps for iOS and Android let you manage your meetings on the go, so you're always in control of your schedule.</p>
+  </details>
+  
+  <details>
+    <summary>Is there a free trial available?</summary>
+    <p>Yes, we offer a 14-day free trial to explore all our features. No credit card is required to get started!</p>
+  </details>
+</section>
+
+  </section>
 
   <!-- Call To Action -->
   <section id="cta">
@@ -96,7 +139,7 @@
     <p>Join thousands of professionals simplifying their meetings.</p>
     <a href="signup.html" class="cta-button">Sign Up Free</a>
   </section>
-  
+
   <section id="icon-carousel-section">
     <div class="icon-carousel-wrapper">
       <div class="icon-carousel">
@@ -114,8 +157,7 @@
         <i class="fa-solid fa-users"></i>
         <i class="fa-solid fa-plug"></i>
         <i class="fa-solid fa-check"></i>
-      </div>
-    </div>
+    
   </section>
   
   <!-- Footer -->
@@ -123,6 +165,5 @@
     <p>&copy; 2025 ScheduleWise. All rights reserved.</p>
   </footer>
   <script type="module" src="landingpage.js"></script>
-
 </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Meetings</title>
+    <link rel="stylesheet" href="meetings.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+    <div class="dashboard-layout">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="my_meetings.html" class="active">My Meetings</a></li>
+                <li><a href="analytics.html">Analytics</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1>My Meetings</h1>
+            <div class="filters">
+                <input type="text" id="search-meetings" placeholder="Search meetings...">
+                <select id="filter-status">
+                    <option value="all">All</option>
+                    <option value="upcoming">Upcoming</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <select id="filter-type">
+                    <option value="all">All Types</option>
+                    <option value="online">Online</option>
+                    <option value="physical">Physical</option>
+                </select>
+            </div>
+            <ul id="meetings-list" class="meeting-list"></ul>
+        </main>
+    </div>
+    
+    <div id="meeting-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+    
+    <script type="module" src="meetings.js"></script>
+</body>
+</html>
